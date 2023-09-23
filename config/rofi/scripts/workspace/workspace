@@ -1,0 +1,141 @@
+* {
+  font:                           "JetBrainsMono Nerd Font Mono 13";
+  unselected:                     #4a4a4a;
+  background:                     #202020;
+  background-alt:                 #32302f;
+  foreground:                     #dedede;
+  border:                         #7fa2ac;
+  border-alt:                     #83a598;
+  selected:                       #404040;
+  urgent:                         #cc241d;
+  gray:                           #7a6d63;
+}
+
+configuration {
+	modi:                       "drun";
+  show-icons:                 true;
+  display-drun:               "";
+	drun-display-format:        "{name}";
+}
+
+window {
+  transparency:                   "real";
+  background-color:               @background;
+  text-color:                     @unselected;
+  border:                         0px 0px 3px 0px;
+  border-color:                   @border;
+  border-radius:                  7px;
+  width:                          350px;
+  height:                         300px;
+  padding: 10px;
+  location:                       center;
+  anchor:                         center;
+  x-offset:                       0;
+  y-offset:                       0;
+}
+
+prompt {
+  enabled: 						            false;
+}
+
+textbox-prompt-colon {
+  expand: 						            false;
+  str: 							              "";
+  border-radius:                  7px 0px 0px 7px;
+  background-color:               @background-alt;
+  text-color:                     @foreground;
+  padding:                        8px 2px 8px 12px;
+}
+
+entry {
+  background-color:               @background-alt;
+  text-color:                     @foreground;
+  placeholder-color:              @foreground;
+  expand:                         true;
+  horizontal-align:               0;
+  placeholder:                    "Search folder";
+  blink:                          true;
+  border-radius:                  0px 7px 7px 0px;
+  padding:                        8px;
+}
+
+inputbar {
+  children: 						          [ textbox-prompt-colon, prompt, entry ];
+  background-color:               @background-alt;
+  expand:                         false;
+  border:                      		0px 0px 1px 0px;
+  border-color:                   @border;
+  border-radius:                  7px;
+  margin:                         0px 0px 0px 0px;
+  padding:                        0px;
+  position:                       center;
+}
+
+listview {
+  fixed-height:                   true;
+  fixed-columns:                  true;
+  cycle:                          true;
+  dynamic:                        true;
+  columns:                        3;
+  lines:                          3;
+  background-color:               @background;
+  columns:                        1;
+  lines:            							7;
+  spacing:                        4px;
+  cycle:                          true;
+  dynamic:                        true;
+  layout:                         vertical;
+  border:                         0px;
+  border-color:                   @border;
+  reverse:                        false;
+}
+
+mainbox {
+  background-color:               @background;
+  children:                       [ inputbar, listview ];
+  spacing:                       	15px;
+  padding:                        0px;
+}
+
+scrollbar {
+  handle-width:                   0px ;
+  handle-color:                   @selected;
+  border-radius:                  0px;
+  background-color:               @background-alt;
+}
+
+element {
+  background-color:               @background;
+  text-color:                     @gray;
+  orientation:                    horizontal;
+  padding:                        6px 6px 6px 6px;
+}
+
+element-icon {
+  background-color: 				      inherit;
+  text-color:       				      inherit;
+  size:                           0px;
+  border:                         0px;
+}
+
+element-text {
+  background-color: 				      inherit;
+  text-color:       				      inherit;
+  expand:                         true;
+  horizontal-align:               0;
+  vertical-align:                 0.5;
+  margin:                         2px 0px 2px 6px;
+}
+
+element selected {
+  text-color:                     @foreground;
+  background-color:               @background-alt;
+  border-radius:                  7px;
+}
+
+element-icon {
+  background-color: transparent;
+  size: 20px;
+  padding: 0px 5px 0px 0px;
+  cursor: inherit;
+}
