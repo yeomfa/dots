@@ -29,7 +29,7 @@ It is recommended to make a backup of your dotfiles before starting!
 
 1. Clone the repository to /~:
 ```console
-git clone https://github.com/yeomfa/dots
+git clone https://github.com/yeomfa/dots dotfiles
 ```
 
 2. You must grant permissions to the installation script:
